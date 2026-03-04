@@ -1,0 +1,964 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {},
+  "nodes": [
+    {
+      "type": "entity",
+      "id": "Inductor"
+    },
+    {
+      "type": "entity",
+      "id": "MPS"
+    },
+    {
+      "type": "entity",
+      "id": "Metal Shading Language"
+    },
+    {
+      "type": "entity",
+      "id": "voznesenskym"
+    },
+    {
+      "type": "entity",
+      "id": "penguinwu"
+    },
+    {
+      "type": "entity",
+      "id": "EikanWang"
+    },
+    {
+      "type": "entity",
+      "id": "jgong5"
+    },
+    {
+      "type": "entity",
+      "id": "Guobing-Chen"
+    },
+    {
+      "type": "entity",
+      "id": "XiaobingSuper"
+    },
+    {
+      "type": "entity",
+      "id": "zhuhaozhe"
+    },
+    {
+      "type": "entity",
+      "id": "blzheng"
+    },
+    {
+      "type": "entity",
+      "id": "wenzhe-nrv"
+    },
+    {
+      "type": "entity",
+      "id": "jiayisunx"
+    },
+    {
+      "type": "entity",
+      "id": "ipiszy"
+    },
+    {
+      "type": "entity",
+      "id": "kadeng"
+    },
+    {
+      "type": "entity",
+      "id": "muchulee8"
+    },
+    {
+      "type": "entity",
+      "id": "amjames"
+    },
+    {
+      "type": "entity",
+      "id": "chauhang"
+    },
+    {
+      "type": "entity",
+      "id": "aakhundov"
+    },
+    {
+      "type": "entity",
+      "id": "coconutruben"
+    },
+    {
+      "type": "entity",
+      "id": "jataylo"
+    },
+    {
+      "type": "entity",
+      "id": "half-precision type mismatches"
+    },
+    {
+      "type": "entity",
+      "id": "constant()"
+    },
+    {
+      "type": "entity",
+      "id": "dtype parameter"
+    },
+    {
+      "type": "entity",
+      "id": "masked()"
+    },
+    {
+      "type": "entity",
+      "id": "bare literal"
+    },
+    {
+      "type": "entity",
+      "id": "where()"
+    },
+    {
+      "type": "entity",
+      "id": "none"
+    },
+    {
+      "type": "entity",
+      "id": "ROCm"
+    },
+    {
+      "type": "entity",
+      "id": "jeffdaily"
+    },
+    {
+      "type": "entity",
+      "id": "sunway513"
+    },
+    {
+      "type": "entity",
+      "id": "jithunnair-amd"
+    },
+    {
+      "type": "entity",
+      "id": "pruthvistony"
+    },
+    {
+      "type": "entity",
+      "id": "ROCmSupport"
+    },
+    {
+      "type": "entity",
+      "id": "hongxiayang"
+    },
+    {
+      "type": "entity",
+      "id": "naromero77amd"
+    },
+    {
+      "type": "entity",
+      "id": "pragupta"
+    },
+    {
+      "type": "entity",
+      "id": "jerrymannil"
+    },
+    {
+      "type": "entity",
+      "id": "xinyazhang"
+    },
+    {
+      "type": "entity",
+      "id": "Lucaskabela"
+    },
+    {
+      "type": "entity",
+      "id": "convnext accuracy issues"
+    },
+    {
+      "type": "entity",
+      "id": "schema deserialization"
+    },
+    {
+      "type": "entity",
+      "id": "torch.export.load()"
+    },
+    {
+      "type": "entity",
+      "id": "pybind11"
+    },
+    {
+      "type": "entity",
+      "id": "schema_check.py"
+    },
+    {
+      "type": "entity",
+      "id": "generated_serialization_bindings.h"
+    },
+    {
+      "type": "entity",
+      "id": "pybind.cpp"
+    },
+    {
+      "type": "entity",
+      "id": "_package.py"
+    },
+    {
+      "type": "entity",
+      "id": "serialize.py"
+    },
+    {
+      "type": "entity",
+      "id": "PRs"
+    },
+    {
+      "type": "entity",
+      "id": "C++ infrastructure"
+    },
+    {
+      "type": "entity",
+      "id": "pybind11 property bindings"
+    },
+    {
+      "type": "entity",
+      "id": "GraphModuleDeserializer"
+    },
+    {
+      "type": "entity",
+      "id": "XPUHooks"
+    },
+    {
+      "type": "entity",
+      "id": "VitalsAPI"
+    },
+    {
+      "type": "entity",
+      "id": "XPU.used"
+    },
+    {
+      "type": "entity",
+      "id": "TestVitalSignsCuda::test_cuda_vitals_gpu_only"
+    },
+    {
+      "type": "entity",
+      "id": "CUDA"
+    },
+    {
+      "type": "entity",
+      "id": "Bug in batch rules for group norm backward operator"
+    },
+    {
+      "type": "entity",
+      "id": "Wrong variable name used"
+    },
+    {
+      "type": "entity",
+      "id": "[MENTIONED FRAGMENT](https://github.com/BBBela/pytorch/blob/bc3016d9d44d51abbd4456d572517455a843d68b/aten/src/ATen/functorch/BatchRulesNorm.cpp#L348-L354)"
+    },
+    {
+      "type": "entity",
+      "id": "Related code fragment"
+    },
+    {
+      "type": "entity",
+      "id": "vmap"
+    },
+    {
+      "type": "entity",
+      "id": "test_group_norm_layout_corruption"
+    },
+    {
+      "type": "entity",
+      "id": "#176272"
+    },
+    {
+      "type": "entity",
+      "id": "bug"
+    },
+    {
+      "type": "entity",
+      "id": "wrong_variable"
+    },
+    {
+      "type": "entity",
+      "id": "github_fragment"
+    },
+    {
+      "type": "entity",
+      "id": "code_fragment"
+    },
+    {
+      "type": "entity",
+      "id": "Triton"
+    },
+    {
+      "type": "entity",
+      "id": "pytest-shard"
+    },
+    {
+      "type": "entity",
+      "id": "pytest-shard plugin"
+    },
+    {
+      "type": "entity",
+      "id": "num_shards"
+    },
+    {
+      "type": "entity",
+      "id": "tests"
+    },
+    {
+      "type": "entity",
+      "id": "filtering inside PytestShardPlugin"
+    },
+    {
+      "type": "entity",
+      "id": "GeneralMultiDeviceReplicator"
+    },
+    {
+      "type": "entity",
+      "id": "MultiDeviceReplicator"
+    },
+    {
+      "type": "entity",
+      "id": "found_inf"
+    },
+    {
+      "type": "entity",
+      "id": "inv_scale"
+    },
+    {
+      "type": "entity",
+      "id": "CPU"
+    },
+    {
+      "type": "entity",
+      "id": "FSDP"
+    },
+    {
+      "type": "entity",
+      "id": "0.0"
+    },
+    {
+      "type": "entity",
+      "id": "get()"
+    },
+    {
+      "type": "entity",
+      "id": "non_blocking=False"
+    },
+    {
+      "type": "entity",
+      "id": "torch.export.load"
+    },
+    {
+      "type": "entity",
+      "id": "torch.jit.load"
+    },
+    {
+      "type": "entity",
+      "id": "generated_serialization_types.h"
+    },
+    {
+      "type": "entity",
+      "id": "nlohmann::json"
+    },
+    {
+      "type": "entity",
+      "id": "C++ schema types"
+    },
+    {
+      "type": "entity",
+      "id": "torch.fx"
+    },
+    {
+      "type": "entity",
+      "id": "commit f61180da704"
+    },
+    {
+      "type": "entity",
+      "id": "@chauhang"
+    },
+    {
+      "type": "entity",
+      "id": "@penguinwu"
+    },
+    {
+      "type": "entity",
+      "id": "@avikchaudhuri"
+    },
+    {
+      "type": "entity",
+      "id": "@zhxchen17"
+    },
+    {
+      "type": "entity",
+      "id": "@tugsbayasgalan"
+    },
+    {
+      "type": "entity",
+      "id": "@angelayi"
+    },
+    {
+      "type": "entity",
+      "id": "@suo"
+    },
+    {
+      "type": "entity",
+      "id": "@ydwu4"
+    },
+    {
+      "type": "entity",
+      "id": "due to Python-side schema deserialization"
+    },
+    {
+      "type": "entity",
+      "id": "than torch.jit.load for equivalent models"
+    },
+    {
+      "type": "entity",
+      "id": "62ms"
+    },
+    {
+      "type": "entity",
+      "id": "650ms"
+    },
+    {
+      "type": "entity",
+      "id": "to eliminate this bottleneck"
+    },
+    {
+      "type": "entity",
+      "id": "auto-generated C++ types with nlohmann::json support"
+    },
+    {
+      "type": "entity",
+      "id": "torch._C._export.deserialize_exported_program()"
+    },
+    {
+      "type": "entity",
+      "id": "C++ JSON parsing and schema construction"
+    },
+    {
+      "type": "entity",
+      "id": "opaque pybind11 types with no field access from Python"
+    },
+    {
+      "type": "entity",
+      "id": "exposing field access"
+    },
+    {
+      "type": "entity",
+      "id": "the load path to use C++ deserialization"
+    },
+    {
+      "type": "entity",
+      "id": "OpenVino"
+    },
+    {
+      "type": "entity",
+      "id": "LSTM"
+    },
+    {
+      "type": "entity",
+      "id": "torch.onnx.export"
+    },
+    {
+      "type": "entity",
+      "id": "justinchuby"
+    },
+    {
+      "type": "entity",
+      "id": "titaiwangms"
+    },
+    {
+      "type": "entity",
+      "id": "mikaylagawarecki"
+    },
+    {
+      "type": "entity",
+      "id": "files generated by torch.onnx.export"
+    },
+    {
+      "type": "entity",
+      "id": "input state slicing"
+    }
+  ],
+  "links": [
+    {
+      "relation": "fixes",
+      "evidence": "Fix half-precision type mismatches in Metal shader codegen",
+      "source": "Inductor",
+      "target": "half-precision type mismatches",
+      "key": 0
+    },
+    {
+      "relation": "uses",
+      "evidence": "Metal Shading Language rejects implicit float-to-bfloat conversions",
+      "source": "MPS",
+      "target": "Metal Shading Language",
+      "key": 0
+    },
+    {
+      "relation": "mentioned",
+      "evidence": "@voznesenskym",
+      "source": "voznesenskym",
+      "target": "none",
+      "key": 0
+    },
+    {
+      "relation": "mentioned",
+      "evidence": "@penguinwu",
+      "source": "penguinwu",
+      "target": "none",
+      "key": 0
+    },
+    {
+      "relation": "mentioned",
+      "evidence": "@EikanWang",
+      "source": "EikanWang",
+      "target": "none",
+      "key": 0
+    },
+    {
+      "relation": "mentioned",
+      "evidence": "@jgong5",
+      "source": "jgong5",
+      "target": "none",
+      "key": 0
+    },
+    {
+      "relation": "mentioned",
+      "evidence": "@Guobing-Chen",
+      "source": "Guobing-Chen",
+      "target": "none",
+      "key": 0
+    },
+    {
+      "relation": "mentioned",
+      "evidence": "@XiaobingSuper",
+      "source": "XiaobingSuper",
+      "target": "none",
+      "key": 0
+    },
+    {
+      "relation": "mentioned",
+      "evidence": "@zhuhaozhe",
+      "source": "zhuhaozhe",
+      "target": "none",
+      "key": 0
+    },
+    {
+      "relation": "mentioned",
+      "evidence": "@blzheng",
+      "source": "blzheng",
+      "target": "none",
+      "key": 0
+    },
+    {
+      "relation": "mentioned",
+      "evidence": "@wenzhe-nrv",
+      "source": "wenzhe-nrv",
+      "target": "none",
+      "key": 0
+    },
+    {
+      "relation": "mentioned",
+      "evidence": "@jiayisunx",
+      "source": "jiayisunx",
+      "target": "none",
+      "key": 0
+    },
+    {
+      "relation": "mentioned",
+      "evidence": "@ipiszy",
+      "source": "ipiszy",
+      "target": "none",
+      "key": 0
+    },
+    {
+      "relation": "mentioned",
+      "evidence": "@kadeng",
+      "source": "kadeng",
+      "target": "none",
+      "key": 0
+    },
+    {
+      "relation": "mentioned",
+      "evidence": "@muchulee8",
+      "source": "muchulee8",
+      "target": "none",
+      "key": 0
+    },
+    {
+      "relation": "mentioned",
+      "evidence": "@amjames",
+      "source": "amjames",
+      "target": "none",
+      "key": 0
+    },
+    {
+      "relation": "mentioned",
+      "evidence": "@chauhang",
+      "source": "chauhang",
+      "target": "none",
+      "key": 0
+    },
+    {
+      "relation": "mentioned",
+      "evidence": "@aakhundov",
+      "source": "aakhundov",
+      "target": "none",
+      "key": 0
+    },
+    {
+      "relation": "mentioned",
+      "evidence": "@coconutruben",
+      "source": "coconutruben",
+      "target": "none",
+      "key": 0
+    },
+    {
+      "relation": "mentioned",
+      "evidence": "@jataylo",
+      "source": "jataylo",
+      "target": "none",
+      "key": 0
+    },
+    {
+      "relation": "ignores",
+      "evidence": "constant() ignored its dtype parameter and returned raw literals.",
+      "source": "constant()",
+      "target": "dtype parameter",
+      "key": 0
+    },
+    {
+      "relation": "assigns",
+      "evidence": "masked() assigned a bare literal in the else-branch (`} else tmp = 0.0;`).",
+      "source": "masked()",
+      "target": "bare literal",
+      "key": 0
+    },
+    {
+      "relation": "passes",
+      "evidence": "where() passed a bare literal through the ternary without casting.",
+      "source": "where()",
+      "target": "bare literal",
+      "key": 0
+    },
+    {
+      "relation": "update",
+      "evidence": "Update inductor expected results",
+      "source": "ROCm",
+      "target": "convnext accuracy issues",
+      "key": 0
+    },
+    {
+      "relation": "mentioned_with",
+      "evidence": "",
+      "source": "jeffdaily",
+      "target": "sunway513",
+      "key": 0
+    },
+    {
+      "relation": "mentioned_with",
+      "evidence": "",
+      "source": "jeffdaily",
+      "target": "jithunnair-amd",
+      "key": 0
+    },
+    {
+      "relation": "mentioned_with",
+      "evidence": "",
+      "source": "jeffdaily",
+      "target": "pruthvistony",
+      "key": 0
+    },
+    {
+      "relation": "mentioned_with",
+      "evidence": "",
+      "source": "jeffdaily",
+      "target": "ROCmSupport",
+      "key": 0
+    },
+    {
+      "relation": "mentioned_with",
+      "evidence": "",
+      "source": "jeffdaily",
+      "target": "jataylo",
+      "key": 0
+    },
+    {
+      "relation": "mentioned_with",
+      "evidence": "",
+      "source": "jeffdaily",
+      "target": "hongxiayang",
+      "key": 0
+    },
+    {
+      "relation": "mentioned_with",
+      "evidence": "",
+      "source": "jeffdaily",
+      "target": "naromero77amd",
+      "key": 0
+    },
+    {
+      "relation": "mentioned_with",
+      "evidence": "",
+      "source": "jeffdaily",
+      "target": "pragupta",
+      "key": 0
+    },
+    {
+      "relation": "mentioned_with",
+      "evidence": "",
+      "source": "jeffdaily",
+      "target": "jerrymannil",
+      "key": 0
+    },
+    {
+      "relation": "mentioned_with",
+      "evidence": "",
+      "source": "jeffdaily",
+      "target": "xinyazhang",
+      "key": 0
+    },
+    {
+      "relation": "moved from",
+      "evidence": "The schema deserialization step in `torch.export.load()` is moved from Python (`_dict_to_dataclass` / `_bytes_to_dataclass`) to the existing C++ infrastructure.",
+      "source": "schema deserialization",
+      "target": "C++ infrastructure",
+      "key": 0
+    },
+    {
+      "relation": "uses",
+      "evidence": "The code generator in `schema_check.py` now also produces pybind11 property bindings for all 55 schema types...",
+      "source": "schema deserialization",
+      "target": "pybind11 property bindings",
+      "key": 0
+    },
+    {
+      "relation": "is now usable",
+      "evidence": "The C++ objects returned by `deserialize_exported_program()` are directly usable by `GraphModuleDeserializer`.",
+      "source": "schema deserialization",
+      "target": "GraphModuleDeserializer",
+      "key": 0
+    },
+    {
+      "relation": "already exists",
+      "evidence": "",
+      "source": "C++ infrastructure",
+      "target": "to eliminate this bottleneck",
+      "key": 0
+    },
+    {
+      "relation": "can't use",
+      "evidence": "",
+      "source": "GraphModuleDeserializer",
+      "target": "C++ schema types",
+      "key": 0
+    },
+    {
+      "relation": "calls",
+      "evidence": "calls the `VitalsAPI`",
+      "source": "XPUHooks",
+      "target": "VitalsAPI",
+      "key": 0
+    },
+    {
+      "relation": "sets",
+      "evidence": "setting `XPU.used` to `true`",
+      "source": "XPUHooks",
+      "target": "XPU.used",
+      "key": 0
+    },
+    {
+      "relation": "allows",
+      "evidence": "allows the `TestVitalSignsCuda::test_cuda_vitals_gpu_only` test to pass",
+      "source": "XPUHooks",
+      "target": "TestVitalSignsCuda::test_cuda_vitals_gpu_only",
+      "key": 0
+    },
+    {
+      "relation": "implements",
+      "evidence": "aligns the XPU hook init with the CUDA implementation",
+      "source": "XPUHooks",
+      "target": "CUDA",
+      "key": 0
+    },
+    {
+      "relation": "used in",
+      "evidence": "",
+      "source": "vmap",
+      "target": "test_group_norm_layout_corruption",
+      "key": 0
+    },
+    {
+      "relation": "is caused by",
+      "evidence": "",
+      "source": "bug",
+      "target": "wrong_variable",
+      "key": 0
+    },
+    {
+      "relation": "is used in",
+      "evidence": "",
+      "source": "wrong_variable",
+      "target": "github_fragment",
+      "key": 0
+    },
+    {
+      "relation": "contains",
+      "evidence": "",
+      "source": "github_fragment",
+      "target": "code_fragment",
+      "key": 0
+    },
+    {
+      "relation": "related to",
+      "evidence": "",
+      "source": "code_fragment",
+      "target": "bug",
+      "key": 0
+    },
+    {
+      "relation": "uses",
+      "evidence": "",
+      "source": "Triton",
+      "target": "ROCm",
+      "key": 0
+    },
+    {
+      "relation": "initialize",
+      "evidence": "",
+      "source": "pytest-shard",
+      "target": "pytest-shard plugin",
+      "key": 0
+    },
+    {
+      "relation": "filter",
+      "evidence": "",
+      "source": "pytest-shard",
+      "target": "tests",
+      "key": 0
+    },
+    {
+      "relation": "disable",
+      "evidence": "",
+      "source": "pytest-shard",
+      "target": "filtering inside PytestShardPlugin",
+      "key": 0
+    },
+    {
+      "relation": "initialize",
+      "evidence": "",
+      "source": "num_shards",
+      "target": "pytest-shard plugin",
+      "key": 0
+    },
+    {
+      "relation": "filter",
+      "evidence": "",
+      "source": "num_shards",
+      "target": "tests",
+      "key": 0
+    },
+    {
+      "relation": "inherits",
+      "evidence": "`_GeneralMultiDeviceReplicator.get()` inherited `non_blocking=True` from `_MultiDeviceReplicator`",
+      "source": "GeneralMultiDeviceReplicator",
+      "target": "MultiDeviceReplicator",
+      "key": 0
+    },
+    {
+      "relation": "copied",
+      "evidence": "When FSDP CPU offload is active, `found_inf` gets copied CUDA\u2192CPU asynchronously",
+      "source": "found_inf",
+      "target": "CPU",
+      "key": 0
+    },
+    {
+      "relation": "overwritten",
+      "evidence": "and the pending DMA can complete *after* `_amp_foreach_non_finite_check_and_unscale_()` writes `1.0` into the tensor \u2014 overwriting the inf result with `0.0`",
+      "source": "found_inf",
+      "target": "0.0",
+      "key": 0
+    },
+    {
+      "relation": "overridden",
+      "evidence": "Override `get()` in `_GeneralMultiDeviceReplicator` to use `non_blocking=False`",
+      "source": "get()",
+      "target": "non_blocking=False",
+      "key": 0
+    },
+    {
+      "relation": "slow",
+      "evidence": "",
+      "source": "torch.export.load",
+      "target": "due to Python-side schema deserialization",
+      "key": 0
+    },
+    {
+      "relation": "roughly 10x slower",
+      "evidence": "",
+      "source": "torch.export.load",
+      "target": "than torch.jit.load for equivalent models",
+      "key": 0
+    },
+    {
+      "relation": "takes",
+      "evidence": "",
+      "source": "torch.export.load",
+      "target": "650ms",
+      "key": 0
+    },
+    {
+      "relation": "takes",
+      "evidence": "",
+      "source": "torch.jit.load",
+      "target": "62ms",
+      "key": 0
+    },
+    {
+      "relation": "contains",
+      "evidence": "",
+      "source": "generated_serialization_types.h",
+      "target": "auto-generated C++ types with nlohmann::json support",
+      "key": 0
+    },
+    {
+      "relation": "registered as",
+      "evidence": "",
+      "source": "C++ schema types",
+      "target": "opaque pybind11 types with no field access from Python",
+      "key": 0
+    },
+    {
+      "relation": "already performs",
+      "evidence": "",
+      "source": "torch._C._export.deserialize_exported_program()",
+      "target": "C++ JSON parsing and schema construction",
+      "key": 0
+    },
+    {
+      "relation": "would allow",
+      "evidence": "",
+      "source": "exposing field access",
+      "target": "the load path to use C++ deserialization",
+      "key": 0
+    },
+    {
+      "relation": "generates errors",
+      "evidence": "Openvino generates errors when importing files generated by torch.onnx.export when LSTMs are used.",
+      "source": "OpenVino",
+      "target": "files generated by torch.onnx.export",
+      "key": 0
+    },
+    {
+      "relation": "should modify",
+      "evidence": "I think the starts/ends should also be (1D) vectors.",
+      "source": "OpenVino",
+      "target": "input state slicing",
+      "key": 0
+    },
+    {
+      "relation": "is used",
+      "evidence": "Openvino generates errors when importing files generated by torch.onnx.export when LSTMs are used.",
+      "source": "LSTM",
+      "target": "torch.onnx.export",
+      "key": 0
+    }
+  ]
+}

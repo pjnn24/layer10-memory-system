@@ -1,0 +1,250 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 750px;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+             #loadingBar {
+                 position:absolute;
+                 top:0px;
+                 left:0px;
+                 width: 100%;
+                 height: 750px;
+                 background-color:rgba(200,200,200,0.8);
+                 -webkit-transition: all 0.5s ease;
+                 -moz-transition: all 0.5s ease;
+                 -ms-transition: all 0.5s ease;
+                 -o-transition: all 0.5s ease;
+                 transition: all 0.5s ease;
+                 opacity:1;
+             }
+
+             #bar {
+                 position:absolute;
+                 top:0px;
+                 left:0px;
+                 width:20px;
+                 height:20px;
+                 margin:auto auto auto auto;
+                 border-radius:11px;
+                 border:2px solid rgba(30,30,30,0.05);
+                 background: rgb(0, 173, 246); /* Old browsers */
+                 box-shadow: 2px 0px 4px rgba(0,0,0,0.4);
+             }
+
+             #border {
+                 position:absolute;
+                 top:10px;
+                 left:10px;
+                 width:500px;
+                 height:23px;
+                 margin:auto auto auto auto;
+                 box-shadow: 0px 0px 4px rgba(0,0,0,0.2);
+                 border-radius:10px;
+             }
+
+             #text {
+                 position:absolute;
+                 top:8px;
+                 left:530px;
+                 width:30px;
+                 height:50px;
+                 margin:auto auto auto auto;
+                 font-size:22px;
+                 color: #000000;
+             }
+
+             div.outerBorder {
+                 position:relative;
+                 top:400px;
+                 width:600px;
+                 height:44px;
+                 margin:auto auto auto auto;
+                 border:8px solid rgba(0,0,0,0.1);
+                 background: rgb(252,252,252); /* Old browsers */
+                 background: -moz-linear-gradient(top,  rgba(252,252,252,1) 0%, rgba(237,237,237,1) 100%); /* FF3.6+ */
+                 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(252,252,252,1)), color-stop(100%,rgba(237,237,237,1))); /* Chrome,Safari4+ */
+                 background: -webkit-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Chrome10+,Safari5.1+ */
+                 background: -o-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Opera 11.10+ */
+                 background: -ms-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* IE10+ */
+                 background: linear-gradient(to bottom,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* W3C */
+                 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
+                 border-radius:72px;
+                 box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+             }
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+            <div id="loadingBar">
+              <div class="outerBorder">
+                <div id="text">0%</div>
+                <div id="border">
+                  <div id="bar"></div>
+                </div>
+              </div>
+            </div>
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "#97c2fc", "id": "Inductor", "label": "Inductor", "shape": "dot"}, {"color": "#97c2fc", "id": "MPS", "label": "MPS", "shape": "dot"}, {"color": "#97c2fc", "id": "Metal Shading Language", "label": "Metal Shading Language", "shape": "dot"}, {"color": "#97c2fc", "id": "voznesenskym", "label": "voznesenskym", "shape": "dot"}, {"color": "#97c2fc", "id": "penguinwu", "label": "penguinwu", "shape": "dot"}, {"color": "#97c2fc", "id": "EikanWang", "label": "EikanWang", "shape": "dot"}, {"color": "#97c2fc", "id": "jgong5", "label": "jgong5", "shape": "dot"}, {"color": "#97c2fc", "id": "Guobing-Chen", "label": "Guobing-Chen", "shape": "dot"}, {"color": "#97c2fc", "id": "XiaobingSuper", "label": "XiaobingSuper", "shape": "dot"}, {"color": "#97c2fc", "id": "zhuhaozhe", "label": "zhuhaozhe", "shape": "dot"}, {"color": "#97c2fc", "id": "blzheng", "label": "blzheng", "shape": "dot"}, {"color": "#97c2fc", "id": "wenzhe-nrv", "label": "wenzhe-nrv", "shape": "dot"}, {"color": "#97c2fc", "id": "jiayisunx", "label": "jiayisunx", "shape": "dot"}, {"color": "#97c2fc", "id": "ipiszy", "label": "ipiszy", "shape": "dot"}, {"color": "#97c2fc", "id": "kadeng", "label": "kadeng", "shape": "dot"}, {"color": "#97c2fc", "id": "muchulee8", "label": "muchulee8", "shape": "dot"}, {"color": "#97c2fc", "id": "amjames", "label": "amjames", "shape": "dot"}, {"color": "#97c2fc", "id": "chauhang", "label": "chauhang", "shape": "dot"}, {"color": "#97c2fc", "id": "aakhundov", "label": "aakhundov", "shape": "dot"}, {"color": "#97c2fc", "id": "coconutruben", "label": "coconutruben", "shape": "dot"}, {"color": "#97c2fc", "id": "jataylo", "label": "jataylo", "shape": "dot"}, {"color": "#97c2fc", "id": "half-precision type mismatches", "label": "half-precision type mismatches", "shape": "dot"}, {"color": "#97c2fc", "id": "constant()", "label": "constant()", "shape": "dot"}, {"color": "#97c2fc", "id": "dtype parameter", "label": "dtype parameter", "shape": "dot"}, {"color": "#97c2fc", "id": "masked()", "label": "masked()", "shape": "dot"}, {"color": "#97c2fc", "id": "bare literal", "label": "bare literal", "shape": "dot"}, {"color": "#97c2fc", "id": "where()", "label": "where()", "shape": "dot"}, {"color": "#97c2fc", "id": "none", "label": "none", "shape": "dot"}, {"color": "#97c2fc", "id": "ROCm", "label": "ROCm", "shape": "dot"}, {"color": "#97c2fc", "id": "jeffdaily", "label": "jeffdaily", "shape": "dot"}, {"color": "#97c2fc", "id": "sunway513", "label": "sunway513", "shape": "dot"}, {"color": "#97c2fc", "id": "jithunnair-amd", "label": "jithunnair-amd", "shape": "dot"}, {"color": "#97c2fc", "id": "pruthvistony", "label": "pruthvistony", "shape": "dot"}, {"color": "#97c2fc", "id": "ROCmSupport", "label": "ROCmSupport", "shape": "dot"}, {"color": "#97c2fc", "id": "hongxiayang", "label": "hongxiayang", "shape": "dot"}, {"color": "#97c2fc", "id": "naromero77amd", "label": "naromero77amd", "shape": "dot"}, {"color": "#97c2fc", "id": "pragupta", "label": "pragupta", "shape": "dot"}, {"color": "#97c2fc", "id": "jerrymannil", "label": "jerrymannil", "shape": "dot"}, {"color": "#97c2fc", "id": "xinyazhang", "label": "xinyazhang", "shape": "dot"}, {"color": "#97c2fc", "id": "Lucaskabela", "label": "Lucaskabela", "shape": "dot"}, {"color": "#97c2fc", "id": "convnext accuracy issues", "label": "convnext accuracy issues", "shape": "dot"}, {"color": "#97c2fc", "id": "schema deserialization", "label": "schema deserialization", "shape": "dot"}, {"color": "#97c2fc", "id": "torch.export.load()", "label": "torch.export.load()", "shape": "dot"}, {"color": "#97c2fc", "id": "pybind11", "label": "pybind11", "shape": "dot"}, {"color": "#97c2fc", "id": "schema_check.py", "label": "schema_check.py", "shape": "dot"}, {"color": "#97c2fc", "id": "generated_serialization_bindings.h", "label": "generated_serialization_bindings.h", "shape": "dot"}, {"color": "#97c2fc", "id": "pybind.cpp", "label": "pybind.cpp", "shape": "dot"}, {"color": "#97c2fc", "id": "_package.py", "label": "_package.py", "shape": "dot"}, {"color": "#97c2fc", "id": "serialize.py", "label": "serialize.py", "shape": "dot"}, {"color": "#97c2fc", "id": "PRs", "label": "PRs", "shape": "dot"}, {"color": "#97c2fc", "id": "C++ infrastructure", "label": "C++ infrastructure", "shape": "dot"}, {"color": "#97c2fc", "id": "pybind11 property bindings", "label": "pybind11 property bindings", "shape": "dot"}, {"color": "#97c2fc", "id": "GraphModuleDeserializer", "label": "GraphModuleDeserializer", "shape": "dot"}, {"color": "#97c2fc", "id": "XPUHooks", "label": "XPUHooks", "shape": "dot"}, {"color": "#97c2fc", "id": "VitalsAPI", "label": "VitalsAPI", "shape": "dot"}, {"color": "#97c2fc", "id": "XPU.used", "label": "XPU.used", "shape": "dot"}, {"color": "#97c2fc", "id": "TestVitalSignsCuda::test_cuda_vitals_gpu_only", "label": "TestVitalSignsCuda::test_cuda_vitals_gpu_only", "shape": "dot"}, {"color": "#97c2fc", "id": "CUDA", "label": "CUDA", "shape": "dot"}, {"color": "#97c2fc", "id": "Bug in batch rules for group norm backward operator", "label": "Bug in batch rules for group norm backward operator", "shape": "dot"}, {"color": "#97c2fc", "id": "Wrong variable name used", "label": "Wrong variable name used", "shape": "dot"}, {"color": "#97c2fc", "id": "[MENTIONED FRAGMENT](https://github.com/BBBela/pytorch/blob/bc3016d9d44d51abbd4456d572517455a843d68b/aten/src/ATen/functorch/BatchRulesNorm.cpp#L348-L354)", "label": "[MENTIONED FRAGMENT](https://github.com/BBBela/pytorch/blob/bc3016d9d44d51abbd4456d572517455a843d68b/aten/src/ATen/functorch/BatchRulesNorm.cpp#L348-L354)", "shape": "dot"}, {"color": "#97c2fc", "id": "Related code fragment", "label": "Related code fragment", "shape": "dot"}, {"color": "#97c2fc", "id": "vmap", "label": "vmap", "shape": "dot"}, {"color": "#97c2fc", "id": "test_group_norm_layout_corruption", "label": "test_group_norm_layout_corruption", "shape": "dot"}, {"color": "#97c2fc", "id": "#176272", "label": "#176272", "shape": "dot"}, {"color": "#97c2fc", "id": "bug", "label": "bug", "shape": "dot"}, {"color": "#97c2fc", "id": "wrong_variable", "label": "wrong_variable", "shape": "dot"}, {"color": "#97c2fc", "id": "github_fragment", "label": "github_fragment", "shape": "dot"}, {"color": "#97c2fc", "id": "code_fragment", "label": "code_fragment", "shape": "dot"}, {"color": "#97c2fc", "id": "Triton", "label": "Triton", "shape": "dot"}, {"color": "#97c2fc", "id": "pytest-shard", "label": "pytest-shard", "shape": "dot"}, {"color": "#97c2fc", "id": "pytest-shard plugin", "label": "pytest-shard plugin", "shape": "dot"}, {"color": "#97c2fc", "id": "num_shards", "label": "num_shards", "shape": "dot"}, {"color": "#97c2fc", "id": "tests", "label": "tests", "shape": "dot"}, {"color": "#97c2fc", "id": "filtering inside PytestShardPlugin", "label": "filtering inside PytestShardPlugin", "shape": "dot"}, {"color": "#97c2fc", "id": "GeneralMultiDeviceReplicator", "label": "GeneralMultiDeviceReplicator", "shape": "dot"}, {"color": "#97c2fc", "id": "MultiDeviceReplicator", "label": "MultiDeviceReplicator", "shape": "dot"}, {"color": "#97c2fc", "id": "found_inf", "label": "found_inf", "shape": "dot"}, {"color": "#97c2fc", "id": "inv_scale", "label": "inv_scale", "shape": "dot"}, {"color": "#97c2fc", "id": "CPU", "label": "CPU", "shape": "dot"}, {"color": "#97c2fc", "id": "FSDP", "label": "FSDP", "shape": "dot"}, {"color": "#97c2fc", "id": "0.0", "label": "0.0", "shape": "dot"}, {"color": "#97c2fc", "id": "get()", "label": "get()", "shape": "dot"}, {"color": "#97c2fc", "id": "non_blocking=False", "label": "non_blocking=False", "shape": "dot"}, {"color": "#97c2fc", "id": "torch.export.load", "label": "torch.export.load", "shape": "dot"}, {"color": "#97c2fc", "id": "torch.jit.load", "label": "torch.jit.load", "shape": "dot"}, {"color": "#97c2fc", "id": "generated_serialization_types.h", "label": "generated_serialization_types.h", "shape": "dot"}, {"color": "#97c2fc", "id": "nlohmann::json", "label": "nlohmann::json", "shape": "dot"}, {"color": "#97c2fc", "id": "C++ schema types", "label": "C++ schema types", "shape": "dot"}, {"color": "#97c2fc", "id": "torch.fx", "label": "torch.fx", "shape": "dot"}, {"color": "#97c2fc", "id": "commit f61180da704", "label": "commit f61180da704", "shape": "dot"}, {"color": "#97c2fc", "id": "@chauhang", "label": "@chauhang", "shape": "dot"}, {"color": "#97c2fc", "id": "@penguinwu", "label": "@penguinwu", "shape": "dot"}, {"color": "#97c2fc", "id": "@avikchaudhuri", "label": "@avikchaudhuri", "shape": "dot"}, {"color": "#97c2fc", "id": "@zhxchen17", "label": "@zhxchen17", "shape": "dot"}, {"color": "#97c2fc", "id": "@tugsbayasgalan", "label": "@tugsbayasgalan", "shape": "dot"}, {"color": "#97c2fc", "id": "@angelayi", "label": "@angelayi", "shape": "dot"}, {"color": "#97c2fc", "id": "@suo", "label": "@suo", "shape": "dot"}, {"color": "#97c2fc", "id": "@ydwu4", "label": "@ydwu4", "shape": "dot"}, {"color": "#97c2fc", "id": "due to Python-side schema deserialization", "label": "due to Python-side schema deserialization", "shape": "dot"}, {"color": "#97c2fc", "id": "than torch.jit.load for equivalent models", "label": "than torch.jit.load for equivalent models", "shape": "dot"}, {"color": "#97c2fc", "id": "62ms", "label": "62ms", "shape": "dot"}, {"color": "#97c2fc", "id": "650ms", "label": "650ms", "shape": "dot"}, {"color": "#97c2fc", "id": "to eliminate this bottleneck", "label": "to eliminate this bottleneck", "shape": "dot"}, {"color": "#97c2fc", "id": "auto-generated C++ types with nlohmann::json support", "label": "auto-generated C++ types with nlohmann::json support", "shape": "dot"}, {"color": "#97c2fc", "id": "torch._C._export.deserialize_exported_program()", "label": "torch._C._export.deserialize_exported_program()", "shape": "dot"}, {"color": "#97c2fc", "id": "C++ JSON parsing and schema construction", "label": "C++ JSON parsing and schema construction", "shape": "dot"}, {"color": "#97c2fc", "id": "opaque pybind11 types with no field access from Python", "label": "opaque pybind11 types with no field access from Python", "shape": "dot"}, {"color": "#97c2fc", "id": "exposing field access", "label": "exposing field access", "shape": "dot"}, {"color": "#97c2fc", "id": "the load path to use C++ deserialization", "label": "the load path to use C++ deserialization", "shape": "dot"}, {"color": "#97c2fc", "id": "OpenVino", "label": "OpenVino", "shape": "dot"}, {"color": "#97c2fc", "id": "LSTM", "label": "LSTM", "shape": "dot"}, {"color": "#97c2fc", "id": "torch.onnx.export", "label": "torch.onnx.export", "shape": "dot"}, {"color": "#97c2fc", "id": "justinchuby", "label": "justinchuby", "shape": "dot"}, {"color": "#97c2fc", "id": "titaiwangms", "label": "titaiwangms", "shape": "dot"}, {"color": "#97c2fc", "id": "mikaylagawarecki", "label": "mikaylagawarecki", "shape": "dot"}, {"color": "#97c2fc", "id": "files generated by torch.onnx.export", "label": "files generated by torch.onnx.export", "shape": "dot"}, {"color": "#97c2fc", "id": "input state slicing", "label": "input state slicing", "shape": "dot"}]);
+                  edges = new vis.DataSet([{"arrows": "to", "from": "Inductor", "label": "fixes", "to": "half-precision type mismatches"}, {"arrows": "to", "from": "MPS", "label": "uses", "to": "Metal Shading Language"}, {"arrows": "to", "from": "voznesenskym", "label": "mentioned", "to": "none"}, {"arrows": "to", "from": "penguinwu", "label": "mentioned", "to": "none"}, {"arrows": "to", "from": "EikanWang", "label": "mentioned", "to": "none"}, {"arrows": "to", "from": "jgong5", "label": "mentioned", "to": "none"}, {"arrows": "to", "from": "Guobing-Chen", "label": "mentioned", "to": "none"}, {"arrows": "to", "from": "XiaobingSuper", "label": "mentioned", "to": "none"}, {"arrows": "to", "from": "zhuhaozhe", "label": "mentioned", "to": "none"}, {"arrows": "to", "from": "blzheng", "label": "mentioned", "to": "none"}, {"arrows": "to", "from": "wenzhe-nrv", "label": "mentioned", "to": "none"}, {"arrows": "to", "from": "jiayisunx", "label": "mentioned", "to": "none"}, {"arrows": "to", "from": "ipiszy", "label": "mentioned", "to": "none"}, {"arrows": "to", "from": "kadeng", "label": "mentioned", "to": "none"}, {"arrows": "to", "from": "muchulee8", "label": "mentioned", "to": "none"}, {"arrows": "to", "from": "amjames", "label": "mentioned", "to": "none"}, {"arrows": "to", "from": "chauhang", "label": "mentioned", "to": "none"}, {"arrows": "to", "from": "aakhundov", "label": "mentioned", "to": "none"}, {"arrows": "to", "from": "coconutruben", "label": "mentioned", "to": "none"}, {"arrows": "to", "from": "jataylo", "label": "mentioned", "to": "none"}, {"arrows": "to", "from": "constant()", "label": "ignores", "to": "dtype parameter"}, {"arrows": "to", "from": "masked()", "label": "assigns", "to": "bare literal"}, {"arrows": "to", "from": "where()", "label": "passes", "to": "bare literal"}, {"arrows": "to", "from": "ROCm", "label": "update", "to": "convnext accuracy issues"}, {"arrows": "to", "from": "jeffdaily", "label": "mentioned_with", "to": "sunway513"}, {"arrows": "to", "from": "jeffdaily", "label": "mentioned_with", "to": "jithunnair-amd"}, {"arrows": "to", "from": "jeffdaily", "label": "mentioned_with", "to": "pruthvistony"}, {"arrows": "to", "from": "jeffdaily", "label": "mentioned_with", "to": "ROCmSupport"}, {"arrows": "to", "from": "jeffdaily", "label": "mentioned_with", "to": "jataylo"}, {"arrows": "to", "from": "jeffdaily", "label": "mentioned_with", "to": "hongxiayang"}, {"arrows": "to", "from": "jeffdaily", "label": "mentioned_with", "to": "naromero77amd"}, {"arrows": "to", "from": "jeffdaily", "label": "mentioned_with", "to": "pragupta"}, {"arrows": "to", "from": "jeffdaily", "label": "mentioned_with", "to": "jerrymannil"}, {"arrows": "to", "from": "jeffdaily", "label": "mentioned_with", "to": "xinyazhang"}, {"arrows": "to", "from": "schema deserialization", "label": "moved from", "to": "C++ infrastructure"}, {"arrows": "to", "from": "schema deserialization", "label": "uses", "to": "pybind11 property bindings"}, {"arrows": "to", "from": "schema deserialization", "label": "is now usable", "to": "GraphModuleDeserializer"}, {"arrows": "to", "from": "C++ infrastructure", "label": "already exists", "to": "to eliminate this bottleneck"}, {"arrows": "to", "from": "GraphModuleDeserializer", "label": "can\u0027t use", "to": "C++ schema types"}, {"arrows": "to", "from": "XPUHooks", "label": "calls", "to": "VitalsAPI"}, {"arrows": "to", "from": "XPUHooks", "label": "sets", "to": "XPU.used"}, {"arrows": "to", "from": "XPUHooks", "label": "allows", "to": "TestVitalSignsCuda::test_cuda_vitals_gpu_only"}, {"arrows": "to", "from": "XPUHooks", "label": "implements", "to": "CUDA"}, {"arrows": "to", "from": "vmap", "label": "used in", "to": "test_group_norm_layout_corruption"}, {"arrows": "to", "from": "bug", "label": "is caused by", "to": "wrong_variable"}, {"arrows": "to", "from": "wrong_variable", "label": "is used in", "to": "github_fragment"}, {"arrows": "to", "from": "github_fragment", "label": "contains", "to": "code_fragment"}, {"arrows": "to", "from": "code_fragment", "label": "related to", "to": "bug"}, {"arrows": "to", "from": "Triton", "label": "uses", "to": "ROCm"}, {"arrows": "to", "from": "pytest-shard", "label": "initialize", "to": "pytest-shard plugin"}, {"arrows": "to", "from": "pytest-shard", "label": "filter", "to": "tests"}, {"arrows": "to", "from": "pytest-shard", "label": "disable", "to": "filtering inside PytestShardPlugin"}, {"arrows": "to", "from": "num_shards", "label": "initialize", "to": "pytest-shard plugin"}, {"arrows": "to", "from": "num_shards", "label": "filter", "to": "tests"}, {"arrows": "to", "from": "GeneralMultiDeviceReplicator", "label": "inherits", "to": "MultiDeviceReplicator"}, {"arrows": "to", "from": "found_inf", "label": "copied", "to": "CPU"}, {"arrows": "to", "from": "found_inf", "label": "overwritten", "to": "0.0"}, {"arrows": "to", "from": "get()", "label": "overridden", "to": "non_blocking=False"}, {"arrows": "to", "from": "torch.export.load", "label": "slow", "to": "due to Python-side schema deserialization"}, {"arrows": "to", "from": "torch.export.load", "label": "roughly 10x slower", "to": "than torch.jit.load for equivalent models"}, {"arrows": "to", "from": "torch.export.load", "label": "takes", "to": "650ms"}, {"arrows": "to", "from": "torch.jit.load", "label": "takes", "to": "62ms"}, {"arrows": "to", "from": "generated_serialization_types.h", "label": "contains", "to": "auto-generated C++ types with nlohmann::json support"}, {"arrows": "to", "from": "C++ schema types", "label": "registered as", "to": "opaque pybind11 types with no field access from Python"}, {"arrows": "to", "from": "torch._C._export.deserialize_exported_program()", "label": "already performs", "to": "C++ JSON parsing and schema construction"}, {"arrows": "to", "from": "exposing field access", "label": "would allow", "to": "the load path to use C++ deserialization"}, {"arrows": "to", "from": "OpenVino", "label": "generates errors", "to": "files generated by torch.onnx.export"}, {"arrows": "to", "from": "OpenVino", "label": "should modify", "to": "input state slicing"}, {"arrows": "to", "from": "LSTM", "label": "is used", "to": "torch.onnx.export"}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+                      network.on("stabilizationProgress", function(params) {
+                          document.getElementById('loadingBar').removeAttribute("style");
+                          var maxWidth = 496;
+                          var minWidth = 20;
+                          var widthFactor = params.iterations/params.total;
+                          var width = Math.max(minWidth,maxWidth * widthFactor);
+                          document.getElementById('bar').style.width = width + 'px';
+                          document.getElementById('text').innerHTML = Math.round(widthFactor*100) + '%';
+                      });
+                      network.once("stabilizationIterationsDone", function() {
+                          document.getElementById('text').innerHTML = '100%';
+                          document.getElementById('bar').style.width = '496px';
+                          document.getElementById('loadingBar').style.opacity = 0;
+                          // really clean the dom element
+                          setTimeout(function () {document.getElementById('loadingBar').style.display = 'none';}, 500);
+                      });
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>
